@@ -4,7 +4,8 @@
   "description": "teste",
   "main": "serve.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "selenium": "java -jar selenium-server-standalone-3.141.59.jar",
+    "test": "node test.js"
   },
   "author": "paulo",
   "license": "ISC",
