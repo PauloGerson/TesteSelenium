@@ -1,0 +1,18 @@
+{
+  "name": "teste-selenium",
+  "version": "1.0.0",
+  "description": "teste",
+  "main": "serve.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "paulo",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.9.0"
+  },
+  "devDependencies": {
+    "chromedriver": "^113.0.0"
+  }
+}
