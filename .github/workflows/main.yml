@@ -1,18 +1,32 @@
-name: Selenium test
+name: Selenium Test
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  test:
+  selenium:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14.x'
-    - name: Install dependencies
-      run: npm install
-    - name: Run Selenium test
-      run: npm test
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start Selenium
+        run: |
+          export DISPLAY=:99
+          /usr/bin/Xvfb :99 -screen 0 1024x768x16 +extension RANDR &
+          sleep 3
+          chromedriver --url-base=/wd/hub &
+
+      - name: Run Selenium tests
+        run: npm run test
