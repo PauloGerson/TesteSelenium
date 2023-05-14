@@ -7,13 +7,13 @@ on:
 
 jobs:
   selenium:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #roda em  uma  maquina virtual   Ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout code # o código fonte é baixado com o uso da ação "checkout" do GitHub.
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+      - name: Set up Node.js #  configuração da versão do Node.js que será usada na execução do teste.
         uses: actions/setup-node@v2
         with:
           node-version: '14.x'
